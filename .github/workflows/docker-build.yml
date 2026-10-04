@@ -1,0 +1,16 @@
+name: nginx
+on:
+  push:
+    branches: main
+jobs:
+  build:
+    runs-on: ubuntu_latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: build dockerfile
+        run: docker build -t docker-practice:1.0 .
+  
+  
+    
