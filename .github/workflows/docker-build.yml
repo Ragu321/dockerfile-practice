@@ -18,7 +18,7 @@ jobs:
         run: docker image inspect docker-practice:1.0
 
       - name: run docker images
-        run: docker run -d -p 8080:80 --name docker-practice:1.0 .
+        run: docker run -d -p 8080:80 --name nginx-test docker-practice:1.0 
         
         
   
