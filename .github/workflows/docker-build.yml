@@ -11,6 +11,9 @@ jobs:
 
       - name: build dockerfile
         run: docker build -t docker-practice:1.0 .
+
+      - name: verify docker images
+        run: docker images
   
   
     
