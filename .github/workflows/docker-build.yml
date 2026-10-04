@@ -14,8 +14,11 @@ jobs:
 
       - name: verify docker images
         run: docker images
-      - name: vrrify specific docker images
+      - name: verify specific docker images
         run: docker image inspect docker-practice:1.0
+
+      - name: run docker images
+        run: docker run -d 8080:80 nginx-test.
         
   
   
