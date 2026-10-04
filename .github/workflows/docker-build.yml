@@ -14,6 +14,9 @@ jobs:
 
       - name: verify docker images
         run: docker images
+      - name: vrrify specific docker images
+        run: docker image inspect docker-practice:1.0
+        
   
   
     
