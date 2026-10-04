@@ -21,8 +21,5 @@ jobs:
         run: docker run -d -p 8080:80 --name nginx-test docker-practice:1.0 
 
       - name: verify docker images
-        run: docker logs docker-practice:1.0 
-        
-  
-  
+        run: docker logs nginx-test
     
