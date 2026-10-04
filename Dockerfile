@@ -1,11 +1,11 @@
 FROM nginx:alpine as builder1 
-WORKDIR /usr/share/nginx/html
+WORKDIR /app
 ENV APP_NAME=DockerPractice
-COPY index.html . 
-COPY nginx.conf /etc/nginx/conf.d/default.conf 
+COPY index.html /app/index.html 
+COPY nginx.conf /app/nginx.conf
 FROM  nginx:alpine as builder2
 WORKDIR /usr/share/nginx/html
-COPY --from=builder1  /usr/share/nginx/html . 
-COPY --from=builder1 /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf 
+COPY --from=builder1 /app/index.html  . 
+COPY --from=builder1  /app/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 
